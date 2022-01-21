@@ -6,7 +6,7 @@ import sys
 """
 请修改路径与文件名,我做测试的视频为60FPS
 生成了1w5张图片，耗时接近500秒，占空间3.5G
-
+注意生成的图片名（第36行）带有空格
 """
 
 
@@ -15,7 +15,7 @@ def ExtractFrames():
     # 这里拆开了文件名和文件路径避免各种乱七八糟的错误
     video_name = filename
     video_path = './video/' + video_name
-    image_path = './pic/lr_pic'
+    image_path = './pic/hr_pic'
 
     if not os.path.exists(image_path):
         os.makedirs(image_path)
@@ -45,5 +45,5 @@ def ExtractFrames():
 
 
 if __name__ == '__main__':
-    filename = 'alice_lr.mp4'
+    filename = 'alice_hr.mp4'
     ExtractFrames()

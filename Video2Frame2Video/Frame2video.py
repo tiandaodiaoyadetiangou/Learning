@@ -2,8 +2,6 @@ import os
 import cv2
 import time
 
-# pic = './pic/lr_pic/0.jpg'
-# imgr = cv2.imread(pic)
 time0 = time.time()
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 path = './pic/lr_pic/'
@@ -11,10 +9,9 @@ filelist = os.listdir(path)
 
 
 def generate_video(video_path, fps):
-    img0 = filelist[0]
+
     img1 = path + str(filelist[0])
     img2 = cv2.imread(img1)
-    # size=(img2.shape[1],img2.shape[0])
     videowriter = cv2.VideoWriter(video_path, fourcc, fps, (img2.shape[1], img2.shape[0]))
 
     for filename in filelist:
